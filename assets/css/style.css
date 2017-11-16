@@ -9,8 +9,9 @@ body {
 
 .main_menu {
 	width: 100%;
-	height: 100px;
+	height: 92px;
 	border: 1px solid;
+	position: fixed;
 }
 
 ul.main_menu_bottom>li {
@@ -22,13 +23,71 @@ ul.main_menu_bottom>li {
 
 .basket_img {
 	float: right;
+	margin: 5px;
 }
 
 .main_menu_bottom {
 	float: right;
 }
-
+.hidden-menu-ticker {
+display: none;
+}
 @font-face  {
 	font-family: PoiretOne-Regular;
     src: url('../fonts/PoiretOne-Regular.ttf');
+}
+@media screen and (max-width: 950px) {
+ul.main_menu_bottom>li:hover {
+	color: rgb(119,136,153);
+	cursor: pointer;
+}
+
+.btn-menu {
+        color: #fff;
+        background-color: #00CC66;
+        padding: 5px;
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        z-index: 5;
+        width: 25px;
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+    }
+    .btn-menu span {
+        display: block;
+        height: 5px;
+        background-color: #fff;
+        margin: 5px 0 0;
+        -webkit-transition: all .1s linear .23s;
+        transition: all .1s linear .23s;
+        position: relative;
+    }
+    .btn-menu span.first {
+        margin-top: 0;
+    }
+    .hidden-menu-ticker:checked~.btn-menu {
+        right: 10px;
+    }
+    .hidden-menu-ticker:checked~.menu_main {
+        right: 0;
+    }
+    .hidden-menu-ticker:checked~.btn-menu span.first {
+        -webkit-transform: rotate(45deg);
+        top: 10px;
+    }
+    .hidden-menu-ticker:checked~.btn-menu span.second {
+        opacity: 0;
+    }
+    .hidden-menu-ticker:checked~.btn-menu span.third {
+        -webkit-transform: rotate(-45deg);
+        top: -10px;
+    }
+    .menu_main a {
+        color: #00CC66;
+    }
+    .menu_main a:hover {
+        color: #F6DD90;
+        cursor: pointer;
+    }
 }
