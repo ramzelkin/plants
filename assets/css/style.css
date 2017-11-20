@@ -6,12 +6,13 @@ html {
 body {
 	margin: 0;
 }
-
-.main_menu {
-	width: 100%;
+header {
 	height: 92px;
-	border: 1px solid;
 	position: fixed;
+	z-index: 5;
+	background-color: rgb(256,256,256);
+	border: 1px solid;
+	width: 100%;
 }
 
 ul.main_menu_bottom>li {
@@ -29,35 +30,68 @@ ul.main_menu_bottom>li {
 .main_menu_bottom {
 	float: right;
 }
+ul.main_menu_bottom>li:hover {
+	color: rgb(119,136,153);
+	cursor: pointer;
+	}
+	
 .hidden-menu-ticker {
-display: none;
+	display: none;
+}
+p {
+	margin-top: 200px;
+	color: red;
+	font-family: arial;
 }
 @font-face  {
 	font-family: PoiretOne-Regular;
     src: url('../fonts/PoiretOne-Regular.ttf');
 }
-@media screen and (max-width: 950px) {
-ul.main_menu_bottom>li:hover {
-	color: rgb(119,136,153);
-	cursor: pointer;
+.video {
+	width: 100%;
+	height: 700px;
+	border: 1px solid;
 }
+.bgvideo {
+min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -9999;
+}
+.catalog {
+	width: 100%;
+	height: 700px;
+	border: 1px solid;
+}
+footer {
+	height: 100px;
+	border: 1px solid;
+}
+@media screen and (max-width: 950px) {
+	
+	ul.main_menu_bottom>li {
+		display: inline;
+		white-space: nowrap;
+		font-size: 1em;
+	}
 
-.btn-menu {
-        color: #fff;
-        background-color: #00CC66;
-        padding: 5px;
-        position: absolute;
-        top: 20px;
-        right: 5px;
-        z-index: 5;
-        width: 25px;
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
+	.btn-menu {
+		color: #fff;
+    	background-color: rgb(0,0,0);
+    	padding: 5px;
+    	position: absolute;
+    	top: 20px;
+    	right: 5px;
+    	z-index: 5;
+    	width: 25px;
+    	-webkit-transform: translateZ(0);
+    	-webkit-backface-visibility: hidden;
     }
     .btn-menu span {
         display: block;
         height: 5px;
-        background-color: #fff;
+        background-color: rgb(256,256,256);
         margin: 5px 0 0;
         -webkit-transition: all .1s linear .23s;
         transition: all .1s linear .23s;
@@ -83,11 +117,5 @@ ul.main_menu_bottom>li:hover {
         -webkit-transform: rotate(-45deg);
         top: -10px;
     }
-    .menu_main a {
-        color: #00CC66;
-    }
-    .menu_main a:hover {
-        color: #F6DD90;
-        cursor: pointer;
-    }
+
 }
